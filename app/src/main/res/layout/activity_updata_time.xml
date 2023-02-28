@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTimingTiming">
+    tools:context=".UpdataTimeActivity">
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
@@ -21,21 +22,22 @@
         app:layout_constraintGuide_end="30dp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_time"
+        android:id="@+id/et_updated_time"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:hint="New Time"
-        android:textColorHint="@android:color/darker_gray"
+        android:hint="Enter updated Time"
+        android:textColorHint="#808080"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
-        app:hintTextColor="@color/black"
+        app:hintTextColor="#808080"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
         app:layout_constraintTop_toTopOf="parent"
         app:startIconDrawable="@drawable/ic_baseline_time_24"
-        app:startIconTint="@android:color/darker_gray">
+        app:startIconTint="#808080">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -44,17 +46,15 @@
             android:maxLines="2" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_submit"
+        android:id="@+id/btn_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:backgroundTint="@android:color/darker_gray"
-        android:contentDescription="Send"
-        android:src="@drawable/ic_baseline_send_24"
+        android:backgroundTint="#808080"
+        android:contentDescription="Update"
+        android:src="@drawable/ic_baseline_update_24"
         app:elevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
