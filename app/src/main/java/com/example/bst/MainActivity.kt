@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         mainRecyclerView = findViewById(R.id.main_recycler_view)
         btnCreate = findViewById(R.id.btn_create)
-        myDataSet = dbOpenHelper.readNotes()
+        myDataSet = dbOpenHelper.readTime()
 
         mainRecyclerView.adapter = TimeAdapter(this,myDataSet)
         mainRecyclerView.setHasFixedSize(true)

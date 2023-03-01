@@ -34,10 +34,13 @@ class AddTimingTiming : AppCompatActivity() {
             return
         }
 
+
         if (notEmpty()) {
             dbOpenHelper.addTime(
                 etTime.editText?.text.toString())
+
             Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show()
+            println("TTTTT: ")
             val intentToMainActivity = Intent(this, MainActivity::class.java)
             startActivity(intentToMainActivity)
             finish()

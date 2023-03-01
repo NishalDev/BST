@@ -20,7 +20,7 @@ class TimeAdapter(
 
     inner class TimeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val textTitle: TextView = view.findViewById(R.id.text_time)
+        val textTime: TextView = view.findViewById(R.id.text_time)
         val btnEdit: MaterialButton = view.findViewById(R.id.btn_edit)
         val btnDelete: MaterialButton = view.findViewById(R.id.btn_delete)
 
@@ -38,16 +38,16 @@ class TimeAdapter(
     override fun onBindViewHolder(holder: TimeViewHolder, position: Int) {
 
         val dialog = DialogBox()
-        val item = dataSet[position]
+        val time = dataSet[position]
 
-        holder.textTitle.text = item.time
+        holder.textTime.text = time.time
 
         holder.btnEdit.setOnClickListener {
-            dialog.editDialog(context, item)
+            dialog.editDialog(context, time)
         }
 
         holder.btnDelete.setOnClickListener {
-            dialog.deleteDialog(context, item)
+            dialog.deleteDialog(context, time)
         }
     }
 

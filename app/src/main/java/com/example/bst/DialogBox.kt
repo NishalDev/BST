@@ -3,6 +3,7 @@ package com.example.bst
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.provider.BaseColumns
 import android.util.Log
 import android.widget.Toast
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -18,11 +19,13 @@ class DialogBox {
             dialog.setMessage("Do you want to update?")
             dialog.setIcon(R.drawable.ic_baseline_edit_24)
 
-            Log.d(TAG, time.time.toString())
+            Log.d(TAG, time.id.toString())
+            Log.d(TAG, time.time)
 
             dialog.setPositiveButton("Update") { _, _ ->
 
                 val intent = Intent(context, UpdataTimeActivity::class.java).apply {
+                    putExtra(BaseColumns._ID, time.id)
                     putExtra(COLUMN_NAME_TIME, time.time)
 
                 }
@@ -40,7 +43,7 @@ class DialogBox {
             dialog.show()
         }
 
-        fun deleteDialog(context: Context, note: TimeModel) {
+        fun deleteDialog(context: Context,time: TimeModel) {
 
             val dbOpenHelper = SqliteOpenHelper(context)
 
@@ -51,8 +54,8 @@ class DialogBox {
 
             dialog.setPositiveButton("Delete") { _, _ ->
 
-                Log.d(TAG, note.time.toString())
-                dbOpenHelper.deleteTime(note.time.toString())
+                Log.d(TAG, time.id.toString())
+                dbOpenHelper.deleteTime(time.id.toString())
 
                 Toast.makeText(context, "Deleted!", Toast.LENGTH_SHORT).show()
 

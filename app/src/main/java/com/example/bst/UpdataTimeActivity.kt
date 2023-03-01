@@ -37,26 +37,21 @@ class UpdataTimeActivity : AppCompatActivity() {
         }
     }
     private fun updateData() {
-
-        val id = intent.getIntExtra(BaseColumns._ID, 0).toString()
-
-        if (etUpdatedTime.editText?.text.toString().isEmpty()) {
-            etUpdatedTime.error = "Please enter your Title"
+            val id = intent.getIntExtra(BaseColumns._ID, 0).toString()
+            if (etUpdatedTime.editText?.text.toString().isEmpty()) {
+            etUpdatedTime.error = "Please enter your Time"
             etUpdatedTime.requestFocus()
             return
         }
 
-
         if (notEmpty()) {
-
-            dbOpenHelper.updateTime(
+            dbOpenHelper.updateTime(id,
                 etUpdatedTime.editText?.text.toString())
             Toast.makeText(this, "Updated!", Toast.LENGTH_SHORT).show()
             val intentToMainActivity = Intent(this, MainActivity::class.java)
             startActivity(intentToMainActivity)
             finish()
         }
-
     }
     private fun notEmpty(): Boolean {
         return (etUpdatedTime.editText?.text.toString().isNotEmpty())
