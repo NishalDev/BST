@@ -12,7 +12,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="176dp"
+        android:background="@drawable/bg2"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -20,22 +21,25 @@
             android:id="@+id/text_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+
             android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif"
             android:text="Time"
-            android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:textSize="40sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/text_place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+
             android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif"
             android:text="Enter the place"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textColor="@color/white"
+            android:textSize="23sp"
+             />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,21 +56,23 @@
                 android:layout_marginEnd="10dp"
                 android:clickable="true"
                 android:drawableEnd="@drawable/ic_baseline_edit_24"
-                android:drawableTint="@color/white"
+                android:drawableTint="@color/black"
                 android:focusable="true"
                 android:text="Edit"
+                android:textColor="@color/black"
                 android:textAllCaps="false" />
 
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_delete"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:textColor="@color/black"
                 android:clickable="true"
                 android:drawableEnd="@drawable/ic_baseline_delete_24"
-                android:drawableTint="@android:color/holo_green_light"
+                android:drawableTint="@color/black"
                 android:focusable="true"
                 android:text="Delete"
                 android:textAllCaps="false" />

@@ -16,8 +16,9 @@ import com.example.bst.TABLE_NAME
 private const val SQL_CREATE_ENTRIES =
     "CREATE TABLE $TABLE_NAME (" +
             "${BaseColumns._ID} INTEGER PRIMARY KEY," +
-            "$COLUMN_NAME_TIME TEXT,"+
+            "$COLUMN_NAME_TIME TEXT," +
             "$COLUMN_NAME_PLACE TEXT)"
+
 
 private const val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS $TABLE_NAME"
 
@@ -29,7 +30,7 @@ class SqliteOpenHelper(context: Context) : SQLiteOpenHelper(
 ) {
     companion object {
         // If you change the database schema, you must increment the database version.
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 2
         private const val DATABASE_NAME = "BusTime.dp"
     }
 

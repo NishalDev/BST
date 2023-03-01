@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@color/white"
     tools:context=".AddTimingTiming">
 
     <androidx.constraintlayout.widget.Guideline
@@ -27,45 +27,54 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:hint="New Time"
-        android:textColorHint="@android:color/darker_gray"
+        android:hint="Time"
+        android:textColorHint="#52595D"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
+
         app:hintTextColor="@color/black"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
         app:layout_constraintTop_toTopOf="parent"
         app:startIconDrawable="@drawable/ic_baseline_time_24"
-        app:startIconTint="@android:color/darker_gray">
+        app:startIconTint="#52595D">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:inputType="textCapWords|textShortMessage"
-            android:maxLines="2" />
+            android:maxLines="2"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_place"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="352dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Place"
-        android:textColorHint="@android:color/darker_gray"
+        android:textColorHint="#52595D"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
         app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/et_time"
         app:startIconDrawable="@drawable/ic_baseline_place_24"
-        app:startIconTint="@android:color/darker_gray"
+        app:startIconTint="#52595D"
         tools:layout_editor_absoluteX="30dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:inputType="textCapWords|textLongMessage"
-            android:maxLines="5" />
+            android:maxLines="5"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

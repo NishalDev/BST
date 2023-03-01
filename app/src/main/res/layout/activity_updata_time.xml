@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bg"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".UpdataTimeActivity">
 
@@ -43,18 +43,19 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADD8E6"
             android:inputType="textCapWords|textShortMessage"
-            android:maxLines="2" />
+            android:maxLines="2"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/et_updated_description"
+        android:id="@+id/et_updated_place"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="Enter updated Description"
+        android:hint="Enter updated Place"
         android:textColorHint="#3A3B3C"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
@@ -68,9 +69,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ADD8E6"
             android:inputType="textCapSentences|textLongMessage|textMultiLine"
-            android:maxLines="5" />
+            android:maxLines="5"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
