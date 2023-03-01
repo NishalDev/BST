@@ -20,6 +20,7 @@ class TimeAdapter(
 
     inner class TimeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+        val textPlace: TextView = view.findViewById(R.id.text_place)
         val textTime: TextView = view.findViewById(R.id.text_time)
         val btnEdit: MaterialButton = view.findViewById(R.id.btn_edit)
         val btnDelete: MaterialButton = view.findViewById(R.id.btn_delete)
@@ -41,6 +42,7 @@ class TimeAdapter(
         val time = dataSet[position]
 
         holder.textTime.text = time.time
+        holder.textPlace.text = time.place
 
         holder.btnEdit.setOnClickListener {
             dialog.editDialog(context, time)

@@ -21,12 +21,14 @@ class DialogBox {
 
             Log.d(TAG, time.id.toString())
             Log.d(TAG, time.time)
+            Log.d(TAG, time.place)
 
             dialog.setPositiveButton("Update") { _, _ ->
 
                 val intent = Intent(context, UpdataTimeActivity::class.java).apply {
                     putExtra(BaseColumns._ID, time.id)
                     putExtra(COLUMN_NAME_TIME, time.time)
+                    putExtra(COLUMN_NAME_PLACE, time.place)
 
                 }
                 context.startActivity(intent)

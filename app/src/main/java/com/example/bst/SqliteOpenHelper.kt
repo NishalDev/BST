@@ -16,10 +16,10 @@ import com.example.bst.TABLE_NAME
 private const val SQL_CREATE_ENTRIES =
     "CREATE TABLE $TABLE_NAME (" +
             "${BaseColumns._ID} INTEGER PRIMARY KEY," +
-            "$COLUMN_NAME_TIME TEXT)"
+            "$COLUMN_NAME_TIME TEXT,"+
+            "$COLUMN_NAME_PLACE TEXT)"
 
 private const val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS $TABLE_NAME"
-
 
 class SqliteOpenHelper(context: Context) : SQLiteOpenHelper(
     context,
@@ -27,10 +27,9 @@ class SqliteOpenHelper(context: Context) : SQLiteOpenHelper(
     null,
     DATABASE_VERSION
 ) {
-
     companion object {
         // If you change the database schema, you must increment the database version.
-        private const val DATABASE_VERSION = 2
+        private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "BusTime.dp"
     }
 
@@ -47,11 +46,12 @@ class SqliteOpenHelper(context: Context) : SQLiteOpenHelper(
         onUpgrade(db, oldVersion, newVersion)
     }
 
-    fun addTime(time: String) {
+    fun addTime(time: String, place: String) {
 
         val db = this.writableDatabase
         val values = ContentValues().apply {
             put(COLUMN_NAME_TIME, time)
+            put(COLUMN_NAME_PLACE, place)
         }
         db?.insert(TABLE_NAME, null, values)
         db.close()
@@ -69,21 +69,22 @@ class SqliteOpenHelper(context: Context) : SQLiteOpenHelper(
                 TimeList.add(
                     TimeModel(
                         cursorTimes.getInt(0),
-                        cursorTimes.getString(1)
+                        cursorTimes.getString(1),
+                        cursorTimes.getString(2)
                     )
                 )
             } while (cursorTimes.moveToNext())
         }
         cursorTimes.close()
         return TimeList
-
     }
 
-    fun updateTime(id: String, time:String) {
+    fun updateTime(id: String, time:String, place: String) {
 
         val db = this.writableDatabase
         val values = ContentValues().apply {
             put(COLUMN_NAME_TIME, time)
+            put(COLUMN_NAME_PLACE, place)
         }
         try {
             db?.update(TABLE_NAME, values, "_id = ?", arrayOf(id))
@@ -91,7 +92,6 @@ class SqliteOpenHelper(context: Context) : SQLiteOpenHelper(
         } catch (e: Exception) {
             Log.d("DBOpenHelper", e.message.toString())
         }
-
     }
 
     fun deleteTime(id:String) {

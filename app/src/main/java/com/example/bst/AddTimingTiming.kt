@@ -8,7 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputLayout
 
 class AddTimingTiming : AppCompatActivity() {
-
+    private lateinit var etPlace: TextInputLayout
     private lateinit var etTime: TextInputLayout
     private lateinit var btnSubmit: FloatingActionButton
     private val dbOpenHelper = SqliteOpenHelper(this)
@@ -17,6 +17,7 @@ class AddTimingTiming : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timing)
 
+        etPlace = findViewById(R.id.et_place)
         etTime = findViewById(R.id.et_time)
         btnSubmit = findViewById(R.id.btn_submit)
 
@@ -29,24 +30,29 @@ class AddTimingTiming : AppCompatActivity() {
     private fun submitData() {
 
         if (etTime.editText?.text.toString().isEmpty()) {
-            etTime.error = "Please enter your Time"
+            etTime.error = "Please enter the Time"
             etTime.requestFocus()
+            return
+        }
+        if (etPlace.editText?.text.toString().isEmpty()) {
+            etPlace.error = "Please enter the Place"
+            etPlace.requestFocus()
             return
         }
 
 
         if (notEmpty()) {
             dbOpenHelper.addTime(
-                etTime.editText?.text.toString())
+                etTime.editText?.text.toString(),
+                etPlace.editText?.text.toString())
 
             Toast.makeText(this, "Added", Toast.LENGTH_SHORT).show()
-            println("TTTTT: ")
             val intentToMainActivity = Intent(this, MainActivity::class.java)
             startActivity(intentToMainActivity)
             finish()
         }
     }
     private fun notEmpty(): Boolean {
-        return (etTime.editText?.text.toString().isNotEmpty())
+        return (etTime.editText?.text.toString().isNotEmpty() && etPlace.editText?.text.toString().isNotEmpty())
     }
 }

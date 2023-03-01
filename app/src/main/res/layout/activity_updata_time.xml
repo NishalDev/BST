@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg"
     android:layout_height="match_parent"
     tools:context=".UpdataTimeActivity">
 
@@ -28,22 +29,48 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:hint="Enter updated Time"
-        android:textColorHint="#808080"
+        android:textColorHint="#3A3B3C"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
-        app:hintTextColor="#808080"
+        app:hintTextColor="#3A3B3C"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/guideline_start"
         app:layout_constraintTop_toTopOf="parent"
         app:startIconDrawable="@drawable/ic_baseline_time_24"
-        app:startIconTint="#808080">
+        app:startIconTint="#3A3B3C">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#ADD8E6"
             android:inputType="textCapWords|textShortMessage"
             android:maxLines="2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_updated_description"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Enter updated Description"
+        android:textColorHint="#3A3B3C"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:hintTextColor="#3A3B3C"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@id/et_updated_time"
+        app:startIconDrawable="@drawable/ic_baseline_description_24"
+        app:startIconTint="#3A3B3C">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ADD8E6"
+            android:inputType="textCapSentences|textLongMessage|textMultiLine"
+            android:maxLines="5" />
 
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".AddTimingTiming">
 
     <androidx.constraintlayout.widget.Guideline
@@ -42,6 +43,29 @@
             android:layout_height="wrap_content"
             android:inputType="textCapWords|textShortMessage"
             android:maxLines="2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_place"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:hint="Place"
+        android:textColorHint="@android:color/darker_gray"
+        app:endIconMode="clear_text"
+        app:errorEnabled="true"
+        app:hintTextColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/et_time"
+        app:startIconDrawable="@drawable/ic_baseline_place_24"
+        app:startIconTint="@android:color/darker_gray"
+        tools:layout_editor_absoluteX="30dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords|textLongMessage"
+            android:maxLines="5" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -46,6 +46,7 @@ class UpdataTimeActivity : AppCompatActivity() {
 
         if (notEmpty()) {
             dbOpenHelper.updateTime(id,
+                etUpdatedTime.editText?.text.toString(),
                 etUpdatedTime.editText?.text.toString())
             Toast.makeText(this, "Updated!", Toast.LENGTH_SHORT).show()
             val intentToMainActivity = Intent(this, MainActivity::class.java)
