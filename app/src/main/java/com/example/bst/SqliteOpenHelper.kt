@@ -7,10 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.provider.BaseColumns
 import android.util.Log
-import android.widget.Toast
-import com.example.bst.TimeModel
-import com.example.bst.COLUMN_NAME_TIME
-import com.example.bst.TABLE_NAME
+import com.example.bst.Model.TimeModel
 
 
 private const val SQL_CREATE_ENTRIES =
@@ -30,7 +27,7 @@ class SqliteOpenHelper(context: Context) : SQLiteOpenHelper(
 ) {
     companion object {
         // If you change the database schema, you must increment the database version.
-        private const val DATABASE_VERSION = 2
+        private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "BusTime.dp"
     }
 

@@ -7,9 +7,9 @@ import android.provider.BaseColumns
 import android.text.Editable
 import android.util.Log
 import android.widget.Toast
+import com.example.bst.Controller.MainActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.android.synthetic.main.activity_updata_time.*
 
 class UpdataTimeActivity : AppCompatActivity() {
 

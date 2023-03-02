@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bst.DialogBox
+import com.example.bst.Utils.DialogBox
 import com.example.bst.R
-import com.example.bst.TimeModel
+import com.example.bst.Model.TimeModel
 import com.google.android.material.button.MaterialButton
 
 class TimeAdapter(
