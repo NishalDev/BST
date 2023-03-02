@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/white"
+    android:theme="@style/Theme.AppCompat.DayNight"
     android:layout_height="match_parent"
     tools:context=".UpdataTimeActivity">
 
@@ -45,6 +46,7 @@
             android:layout_height="wrap_content"
             android:inputType="textCapWords|textShortMessage"
             android:maxLines="2"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -68,6 +70,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:textColor="@color/black"
             android:layout_height="wrap_content"
             android:inputType="textCapSentences|textLongMessage|textMultiLine"
             android:maxLines="5"

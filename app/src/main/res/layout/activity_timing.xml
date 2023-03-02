@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:theme="@style/Theme.AppCompat.DayNight"
     tools:context=".AddTimingTiming">
 
     <androidx.constraintlayout.widget.Guideline
@@ -42,7 +43,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:textColor="@color/black"
             android:inputType="textCapWords|textShortMessage"
             android:maxLines="2"
             android:textSize="18sp"
@@ -70,7 +71,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:textColor="@color/black"
             android:inputType="textCapWords|textLongMessage"
             android:maxLines="5"
             android:textSize="18sp"
